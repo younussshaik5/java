@@ -1,0 +1,29 @@
+->take entry and exit range from user
+->check the prime number with in the range
+->nested loop for prime number
+->use if else to check the divisibility
+
+------------------
+
+start
+    get A,B
+	set Flag,sum=0
+	for i=A to B step1
+	start
+		for j=2 to i step2
+		start
+			if i%j==0
+			start
+				Flag=1
+			end
+		end
+		if Flag==0
+		start
+			sum=sum+i
+		end
+		Flag=0
+	end
+	print sum of range
+end
+
+

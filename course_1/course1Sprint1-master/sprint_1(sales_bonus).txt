@@ -1,0 +1,137 @@
+task-1: calculate the bonus that each employee will get
+task-2: find the employee who has received the highest bonus
+task-3: calculate the average bonus amount given to the employees
+task-4: calculate the total amount that the org should spend on bonuses
+-> if else to compare bonus
+->use loops to calculate the avg bonus amount
+---------------------------
+
+*10% of the emp salary as bonus
+*sales people only eligible for bonus
+
+psuedo:
+
+start
+    set emp1name="jane", emp1designation="manager", emp1sal=120000, emp1dept="sales"
+    set emp2name="gary", emp2designation="manager", emp2sal=130000, emp2dept="hr"
+    set emp3name="sam", emp3designation="sales_rep", emp3sal=90000, emp3dept="sales"
+    set emp4name="tom", emp4designation="regional_head", emp4sal=180000, emp4dept="production"
+    set bonus, highest_bonus, high1, high2, avg_bonus, total_bonus, loop_bonus
+    set emp1bonus, emp2bonus, emp3bonus, emp4bonus
+    set totalEmp=4
+
+
+    //------- using methods to avoid repeatation in bonus calculation
+    bonusOfSalary(salary)
+    start
+        bonus=(salary/12)*(10/100)
+        print bonus
+    end
+
+    //------ emp1
+    if(emp1dept=="sales")
+    start
+        emp1bonus=bonusOfSalary(emp1salary)
+        print emp1bonus
+    end
+    else
+    start
+        emp1bonus=0
+    end
+
+    // ------emp2
+    if(emp2dept=="sales")
+    start
+        emp2bonus=bonusOfSalary(emp2salary)
+        print emp2bonus
+    end
+    else
+    start
+        emp2bonus=0
+    end
+
+
+    //-----emp3
+    if(emp3dept=="sales")
+    start
+        emp3bonus=bonusOfSalary(emp3salary)
+        print emp3bonus
+    end
+    else
+    start
+        emp3bonus=0
+    end
+
+
+    //---emp4
+    if(emp4dept=="sales")
+    start
+        emp4bonus=bonusOfSalary(emp4salary)
+        print emp4bonus
+    end
+    else
+    start
+        emp4bonus=0
+    end
+
+    //----------------------- minus bonus is used to eliminate the non sales dept people
+    if emp1bonus==0
+    start
+        totalEmp=totalEmp-1
+    end
+    if emp2bonus==0
+    start
+        totalEmp=totalEmp-1
+    end
+    if emp3bonus==0
+    start
+        totalEmp=totalEmp-1
+    end
+    if emp4bonus==0
+    start
+        totalEmp=totalEmp-1
+    end
+
+    //------------highest salary divided in two categories as high 1 and high 2 by using two if's
+    //---------high1
+    if(emp1bonus>emp2bonus)
+    start
+        high1=emp1bonus
+    end
+    else
+    start
+        high1=emp2bonus
+    end
+    //-----------------high2
+    if(emp3bonus>emp4bonus)
+    start
+        high2=emp3bonus
+    end
+    else
+    start
+        high2=emp4bonus
+    end
+    //--------------- now comparing high1 and high2
+    if(high1>high2)
+    start
+        print high1+" has the highest salary"
+    end
+    else
+    start
+        print high2+" has the highest salary"
+    end
+
+    //-------------- avg bonus given
+    String [i] bonus={emp1bonus+emp2bonus+emp3bonus+emp4bonus}
+    for i=0 to 4 step 1
+    start
+        loop_bonus=i+loop_bonus;
+    end
+    avg_bonus=loop_bonus/totalEmp
+    print avg_bonus
+
+    //--------- total amount spent by ORG on bonuses
+    total_bonus=(emp1bonus+emp2bonus+emp3bonus+emp4bonus)
+    print total_bonus
+
+end

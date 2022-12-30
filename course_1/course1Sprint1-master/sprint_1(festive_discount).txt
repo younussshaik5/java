@@ -1,0 +1,13 @@
+start
+	get the total_bill_amount
+	set discount_bill
+	if total_bill_amount>=500
+	begin
+		discount_bill=total_bill_amount*(5/100)
+		print discount_bill
+	end
+	else
+	begin
+		print total_bill_amount
+	end
+end

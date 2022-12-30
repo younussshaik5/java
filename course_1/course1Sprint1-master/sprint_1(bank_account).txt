@@ -1,0 +1,25 @@
+start
+	get account_balance
+	set final_balance
+	set account_age
+	if(account_age<=3)
+	start
+		if(account_balance>=50)
+		start
+			final_balance=account_balance-50
+			print final_balance+" the maitainence amount of 50 decucted"
+		end
+		else
+		start
+			print account_balance+" your account is frozen"
+		end
+		if(final_balance<=100)
+		start
+			print account_balance+"your balance is low and account has been frozen"
+		end
+	end
+	else
+	start
+		print +" we will deduct 50$as maintenance from your next quarter"
+	end
+end
